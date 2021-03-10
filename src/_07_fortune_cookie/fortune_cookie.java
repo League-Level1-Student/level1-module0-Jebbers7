@@ -10,7 +10,6 @@ import javax.swing.JOptionPane;
 
 public class fortune_cookie implements ActionListener {
 	public void showButton() {
-		System.out.println("Button Clicked");
 		JFrame frame = new JFrame();
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -18,6 +17,14 @@ public class fortune_cookie implements ActionListener {
 		frame.add(button);
 		frame.pack();
 		button.addActionListener(this);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		JOptionPane.showMessageDialog(null, "Woohoo!");
+		System.out.println("Button Clicked");
 		Random ran = new Random();
 		int num = ran.nextInt(5);
 		if(num == 0) {
@@ -35,11 +42,5 @@ public class fortune_cookie implements ActionListener {
 		else {
 			JOptionPane.showMessageDialog(null, "All the effort you are making will ultimately pay off");
 		}
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
-		JOptionPane.showMessageDialog(null, "Woohoo!");
 	}
 }

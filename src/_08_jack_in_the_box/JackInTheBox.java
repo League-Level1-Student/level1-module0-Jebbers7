@@ -11,16 +11,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class JackInTheBox implements ActionListener {
+	
+	
+	
 	public void showButton() {
-		System.out.println("Button Clicked");
 		JFrame frame = new JFrame();
 		frame.setVisible(true);
 		JButton button = new JButton();
 		frame.add(button);
-		frame.pack();
 		button.addActionListener(this);
 		button.setText("Surprise");
-		
+		frame.pack();
 		}
 	
 	private void showPicture(String fileName) { 
@@ -52,10 +53,15 @@ public class JackInTheBox implements ActionListener {
 	          return new JLabel();
 	     }
 	}
+	int count = 0;
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Button Clicked");
+		count ++;
+		if(count == 5) {
+		showPicture("jackInTheBox.png");
+		}
 	}
 	
 }
